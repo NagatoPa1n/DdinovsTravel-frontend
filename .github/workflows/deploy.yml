@@ -47,6 +47,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Both paths must keep their trailing slash.
           local-dir: ./dist/
-          # The document root of the primary domain on cPanel. A subdomain or an
-          # addon domain lives somewhere else — check File Manager and adjust.
-          server-dir: public_html/
+          # This FTP account lands directly in the document root — its own listing
+          # shows index.html, not a public_html/ to descend into. Verified over FTP.
+          server-dir: ./
