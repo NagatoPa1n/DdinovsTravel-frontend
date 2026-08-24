@@ -1,0 +1,52 @@
+# Builds the site and uploads it to the cPanel host over FTP.
+#
+# The build output (dist/) is never committed: it is produced here on every push to
+# main, so what is on ddinovstravel.uz always matches what is in the repository.
+#
+# Requires three repository secrets — Settings > Secrets and variables > Actions:
+#   FTP_SERVER    the cPanel FTP host, e.g. ftp.ddinovstravel.uz (no ftp:// prefix)
+#   FTP_USERNAME  the FTP account name
+#   FTP_PASSWORD  that account's password
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  # Lets you re-deploy by hand from the Actions tab without pushing anything.
+  workflow_dispatch:
+
+# A second push while the first is still uploading would interleave two file sets
+# on the server, so let the newer run wait for the older one to finish.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      # ci, not install: it installs exactly what package-lock.json pins, so a
+      # deploy can never pick up a version the build was not tested against.
+      - run: npm ci
+
+      # Reads .env.production, which points the client at its own origin (/api).
+      - run: npm run build
+
+      - name: Upload dist/ to the web root
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Both paths must keep their trailing slash.
+          local-dir: ./dist/
+          # The document root of the primary domain on cPanel. A subdomain or an
+          # addon domain lives somewhere else — check File Manager and adjust.
+          server-dir: public_html/
