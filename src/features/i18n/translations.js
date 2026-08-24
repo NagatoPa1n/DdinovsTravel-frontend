@@ -1,0 +1,287 @@
+/**
+ * UI copy for the public site, keyed by language.
+ *
+ * Keys are flat and dotted. `{name}` placeholders are filled by `t(key, vars)`.
+ * Admin screens are intentionally not translated — they are staff-only and stay in English.
+ */
+export const TRANSLATIONS = {
+  en: {
+    'common.loading': 'Loading…',
+    'common.language': 'Language',
+
+    'nav.home': 'Home',
+    'nav.tours': 'Tours',
+    'nav.destinations': 'Destinations',
+    'nav.about': 'About',
+    'nav.contact': 'Contact',
+
+    'footer.tagline': 'Curated small-group journeys, planned end to end.',
+    'footer.rights': 'All rights reserved.',
+    'footer.admin': 'Admin',
+
+    'home.eyebrow': 'Small groups · Local guides',
+    'home.title': 'Journeys worth the distance',
+    'home.lead':
+      'Hand-built itineraries across the places we know best — with the logistics handled so you can just show up.',
+    'home.browseTours': 'Browse tours',
+    'home.exploreDestinations': 'Explore destinations',
+    'home.featured': 'Featured tours',
+    'home.allTours': 'All tours →',
+    'home.featuredEmpty': 'Featured tours will appear here once they are published.',
+    'home.destinations': 'Destinations',
+    'home.allDestinations': 'All destinations →',
+    'home.destinationsEmpty': 'Destinations will appear here once they are added.',
+
+    'tours.title': 'Tours',
+    'tours.count': '{count} trips available',
+    'tours.browse': 'Browse our catalogue',
+    'tours.searchPlaceholder': 'Search tours…',
+    'tours.allCategories': 'All categories',
+    'tours.sortNewest': 'Newest',
+    'tours.sortPriceAsc': 'Price: low to high',
+    'tours.sortPriceDesc': 'Price: high to low',
+    'tours.sortDuration': 'Duration',
+    'tours.error': 'Could not load tours right now.',
+    'tours.loading': 'Loading tours…',
+    'tours.empty': 'No tours match those filters.',
+
+    'destinations.title': 'Destinations',
+    'destinations.lead': 'Every region we run trips in, with the tours that visit them.',
+    'destinations.loading': 'Loading destinations…',
+    'destinations.error': 'Could not load destinations right now.',
+    'destinations.empty': 'No destinations published yet.',
+    'destinations.tourCount': '{count} tours',
+
+    'tour.about': 'About this trip',
+    'tour.itinerary': 'Itinerary',
+    'tour.day': 'Day {n}',
+    'tour.included': 'What is included',
+    'tour.notIncluded': 'Not included',
+    'tour.gallery': 'Gallery',
+    'tour.duration': 'Duration',
+    'tour.groupSize': 'Group size',
+    'tour.upTo': 'Up to {n}',
+    'tour.destination': 'Destination',
+    'tour.enquire': 'Enquire about this tour',
+    'tour.notFound': 'We could not find that tour.',
+    'tour.back': 'Back to all tours',
+
+    'destination.notFound': 'We could not find that destination.',
+    'destination.back': 'Back to destinations',
+    'destination.toursIn': 'Tours in {name}',
+    'destination.empty': 'No tours here yet — check back soon.',
+
+    'about.title': 'About Ddinovs Travel',
+    'about.body':
+      '<p>We are a small team of guides and planners who build trips we would want to take ourselves — modest group sizes, local operators, and itineraries with room to breathe.</p><p>Every tour on this site is one we have run in person.</p>',
+
+    'contact.title': 'Contact us',
+    'contact.lead': 'Questions about a tour, dates, or a custom itinerary? Send us a note.',
+    'contact.name': 'Name',
+    'contact.email': 'Email',
+    'contact.phone': 'Phone',
+    'contact.optional': 'Optional',
+    'contact.message': 'Message',
+    'contact.send': 'Send message',
+    'contact.sent': 'Thanks — we will get back to you shortly.',
+    'contact.failed': 'Message could not be sent. Please try again.',
+    'contact.getInTouch': 'Get in touch',
+    'contact.office': 'Office',
+    'contact.hours': 'Hours',
+    'contact.required': 'This field is required',
+    'contact.invalidEmail': 'Enter a valid email address',
+    'contact.invalidPhone': 'Enter a valid phone number',
+    'contact.messageTooShort': 'Tell us a little more (10 characters minimum)',
+  },
+
+  uz: {
+    'common.loading': 'Yuklanmoqda…',
+    'common.language': 'Til',
+
+    'nav.home': 'Bosh sahifa',
+    'nav.tours': 'Turlar',
+    'nav.destinations': "Yo'nalishlar",
+    'nav.about': 'Biz haqimizda',
+    'nav.contact': 'Aloqa',
+
+    'footer.tagline': "Boshidan oxirigacha rejalashtirilgan kichik guruhli sayohatlar.",
+    'footer.rights': 'Barcha huquqlar himoyalangan.',
+    'footer.admin': 'Admin',
+
+    'home.eyebrow': 'Kichik guruhlar · Mahalliy gidlar',
+    'home.title': 'Masofaga arziydigan sayohatlar',
+    'home.lead':
+      "Biz eng yaxshi biladigan joylar bo'ylab qo'lda tuzilgan marshrutlar — barcha tashkiliy ishlar bizning zimmamizda, siz shunchaki kelasiz.",
+    'home.browseTours': "Turlarni ko'rish",
+    'home.exploreDestinations': "Yo'nalishlarni o'rganish",
+    'home.featured': 'Tanlangan turlar',
+    'home.allTours': 'Barcha turlar →',
+    'home.featuredEmpty': "Tanlangan turlar chop etilgach shu yerda ko'rinadi.",
+    'home.destinations': "Yo'nalishlar",
+    'home.allDestinations': "Barcha yo'nalishlar →",
+    'home.destinationsEmpty': "Yo'nalishlar qo'shilgach shu yerda ko'rinadi.",
+
+    'tours.title': 'Turlar',
+    'tours.count': '{count} ta sayohat mavjud',
+    'tours.browse': "Katalogimizni ko'rib chiqing",
+    'tours.searchPlaceholder': 'Turlarni qidirish…',
+    'tours.allCategories': 'Barcha toifalar',
+    'tours.sortNewest': 'Eng yangi',
+    'tours.sortPriceAsc': 'Narx: arzondan qimmatga',
+    'tours.sortPriceDesc': 'Narx: qimmatdan arzonga',
+    'tours.sortDuration': 'Davomiyligi',
+    'tours.error': "Hozircha turlarni yuklab bo'lmadi.",
+    'tours.loading': 'Turlar yuklanmoqda…',
+    'tours.empty': 'Ushbu filtrlarga mos tur topilmadi.',
+
+    'destinations.title': "Yo'nalishlar",
+    'destinations.lead':
+      "Biz sayohat uyushtiradigan har bir hudud va u yerga boradigan turlar.",
+    'destinations.loading': "Yo'nalishlar yuklanmoqda…",
+    'destinations.error': "Hozircha yo'nalishlarni yuklab bo'lmadi.",
+    'destinations.empty': "Hali yo'nalishlar chop etilmagan.",
+    'destinations.tourCount': '{count} ta tur',
+
+    'tour.about': 'Sayohat haqida',
+    'tour.itinerary': 'Marshrut',
+    'tour.day': '{n}-kun',
+    'tour.included': 'Narxga nima kiradi',
+    'tour.notIncluded': 'Narxga kirmaydi',
+    'tour.gallery': 'Galereya',
+    'tour.duration': 'Davomiyligi',
+    'tour.groupSize': 'Guruh hajmi',
+    'tour.upTo': '{n} kishigacha',
+    'tour.destination': "Yo'nalish",
+    'tour.enquire': "Ushbu tur bo'yicha so'rov yuborish",
+    'tour.notFound': 'Bunday tur topilmadi.',
+    'tour.back': 'Barcha turlarga qaytish',
+
+    'destination.notFound': "Bunday yo'nalish topilmadi.",
+    'destination.back': "Yo'nalishlarga qaytish",
+    'destination.toursIn': '{name} turlari',
+    'destination.empty': "Bu yerda hali turlar yo'q — tez orada qayting.",
+
+    'about.title': 'Ddinovs Travel haqida',
+    'about.body':
+      "<p>Biz gid va rejalashtiruvchilardan iborat kichik jamoamiz — o'zimiz bormoqchi bo'lgan sayohatlarni tuzamiz: kichik guruhlar, mahalliy hamkorlar va shoshilinch bo'lmagan marshrutlar.</p><p>Ushbu saytdagi har bir turni biz shaxsan o'tkazganmiz.</p>",
+
+    'contact.title': "Biz bilan bog'laning",
+    'contact.lead':
+      "Tur, sanalar yoki maxsus marshrut haqida savolingiz bormi? Bizga yozing.",
+    'contact.name': 'Ism',
+    'contact.email': 'Email',
+    'contact.phone': 'Telefon',
+    'contact.optional': 'Ixtiyoriy',
+    'contact.message': 'Xabar',
+    'contact.send': 'Xabar yuborish',
+    'contact.sent': "Rahmat — tez orada siz bilan bog'lanamiz.",
+    'contact.failed': "Xabar yuborilmadi. Qayta urinib ko'ring.",
+    'contact.getInTouch': "Bog'lanish",
+    'contact.office': 'Ofis',
+    'contact.hours': 'Ish vaqti',
+    'contact.required': "Bu maydon to'ldirilishi shart",
+    'contact.invalidEmail': "To'g'ri email manzil kiriting",
+    'contact.invalidPhone': "To'g'ri telefon raqam kiriting",
+    'contact.messageTooShort': "Batafsilroq yozing (kamida 10 ta belgi)",
+  },
+
+  ru: {
+    'common.loading': 'Загрузка…',
+    'common.language': 'Язык',
+
+    'nav.home': 'Главная',
+    'nav.tours': 'Туры',
+    'nav.destinations': 'Направления',
+    'nav.about': 'О нас',
+    'nav.contact': 'Контакты',
+
+    'footer.tagline': 'Путешествия малыми группами, спланированные от и до.',
+    'footer.rights': 'Все права защищены.',
+    'footer.admin': 'Админ',
+
+    'home.eyebrow': 'Малые группы · Местные гиды',
+    'home.title': 'Путешествия, которые стоят пути',
+    'home.lead':
+      'Маршруты, составленные вручную по местам, которые мы знаем лучше всего — всю логистику берём на себя, вам остаётся просто приехать.',
+    'home.browseTours': 'Смотреть туры',
+    'home.exploreDestinations': 'Открыть направления',
+    'home.featured': 'Избранные туры',
+    'home.allTours': 'Все туры →',
+    'home.featuredEmpty': 'Избранные туры появятся здесь после публикации.',
+    'home.destinations': 'Направления',
+    'home.allDestinations': 'Все направления →',
+    'home.destinationsEmpty': 'Направления появятся здесь после добавления.',
+
+    'tours.title': 'Туры',
+    'tours.count': 'Доступно туров: {count}',
+    'tours.browse': 'Посмотрите наш каталог',
+    'tours.searchPlaceholder': 'Поиск туров…',
+    'tours.allCategories': 'Все категории',
+    'tours.sortNewest': 'Сначала новые',
+    'tours.sortPriceAsc': 'Цена: по возрастанию',
+    'tours.sortPriceDesc': 'Цена: по убыванию',
+    'tours.sortDuration': 'Длительность',
+    'tours.error': 'Не удалось загрузить туры.',
+    'tours.loading': 'Загрузка туров…',
+    'tours.empty': 'Туры по этим фильтрам не найдены.',
+
+    'destinations.title': 'Направления',
+    'destinations.lead': 'Все регионы, куда мы возим, и туры по ним.',
+    'destinations.loading': 'Загрузка направлений…',
+    'destinations.error': 'Не удалось загрузить направления.',
+    'destinations.empty': 'Направления пока не опубликованы.',
+    'destinations.tourCount': 'Туров: {count}',
+
+    'tour.about': 'О путешествии',
+    'tour.itinerary': 'Маршрут',
+    'tour.day': 'День {n}',
+    'tour.included': 'Что включено',
+    'tour.notIncluded': 'Не включено',
+    'tour.gallery': 'Галерея',
+    'tour.duration': 'Длительность',
+    'tour.groupSize': 'Размер группы',
+    'tour.upTo': 'До {n}',
+    'tour.destination': 'Направление',
+    'tour.enquire': 'Оставить заявку на тур',
+    'tour.notFound': 'Такой тур не найден.',
+    'tour.back': 'Ко всем турам',
+
+    'destination.notFound': 'Такое направление не найдено.',
+    'destination.back': 'К направлениям',
+    'destination.toursIn': 'Туры: {name}',
+    'destination.empty': 'Здесь пока нет туров — загляните позже.',
+
+    'about.title': 'О Ddinovs Travel',
+    'about.body':
+      '<p>Мы небольшая команда гидов и организаторов, которая делает поездки, в которые поехали бы сами — небольшие группы, местные партнёры и маршруты без спешки.</p><p>Каждый тур на этом сайте мы провели лично.</p>',
+
+    'contact.title': 'Свяжитесь с нами',
+    'contact.lead':
+      'Вопросы о туре, датах или индивидуальном маршруте? Напишите нам.',
+    'contact.name': 'Имя',
+    'contact.email': 'Эл. почта',
+    'contact.phone': 'Телефон',
+    'contact.optional': 'Необязательно',
+    'contact.message': 'Сообщение',
+    'contact.send': 'Отправить сообщение',
+    'contact.sent': 'Спасибо — мы скоро свяжемся с вами.',
+    'contact.failed': 'Не удалось отправить сообщение. Попробуйте ещё раз.',
+    'contact.getInTouch': 'Контакты',
+    'contact.office': 'Офис',
+    'contact.hours': 'Часы работы',
+    'contact.required': 'Обязательное поле',
+    'contact.invalidEmail': 'Введите корректный адрес эл. почты',
+    'contact.invalidPhone': 'Введите корректный номер телефона',
+    'contact.messageTooShort': 'Расскажите подробнее (минимум 10 символов)',
+  },
+}
+
+/**
+ * Duration units, kept apart from the flat keys because they need plural handling.
+ * Uzbek does not inflect the noun after a number; Russian has three forms.
+ */
+export const DURATION_UNITS = {
+  en: { day: ['day', 'days'], night: ['night', 'nights'] },
+  uz: { day: ['kun'], night: ['kecha'] },
+  ru: { day: ['день', 'дня', 'дней'], night: ['ночь', 'ночи', 'ночей'] },
+}
