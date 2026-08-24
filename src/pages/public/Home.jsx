@@ -22,7 +22,6 @@ export default function Home() {
     <>
       <section className="hero">
         <div className="container hero__inner">
-          <p className="hero__eyebrow">{t('home.eyebrow')}</p>
           <h1>{t('home.title')}</h1>
           <p className="hero__lead">{t('home.lead')}</p>
           <div className="hero__actions">

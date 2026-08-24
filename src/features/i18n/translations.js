@@ -15,14 +15,13 @@ export const TRANSLATIONS = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
 
-    'footer.tagline': 'Curated small-group journeys, planned end to end.',
+    'footer.tagline': 'Tailored journeys, planned end to end.',
     'footer.rights': 'All rights reserved.',
     'footer.admin': 'Admin',
 
-    'home.eyebrow': 'Small groups · Local guides',
     'home.title': 'We turn your dreams into journeys',
     'home.lead':
-      'Hand-built itineraries across the places we know best — with the logistics handled so you can just show up.',
+      "Every journey should be unique. That's why we create itineraries tailored to your preferences, handle every detail along the way, and make your trip seamless, comfortable, and truly unforgettable.",
     'home.browseTours': 'Browse tours',
     'home.exploreDestinations': 'Explore destinations',
     'home.featured': 'Featured tours',
@@ -76,7 +75,7 @@ export const TRANSLATIONS = {
 
     'about.title': 'About Ddinovs Travel',
     'about.body':
-      '<p>We are a small team of guides and planners who build trips we would want to take ourselves — modest group sizes, local operators, and itineraries with room to breathe.</p><p>Every tour on this site is one we have run in person.</p>',
+      '<p>We are a team of guides and planners who build trips we would want to take ourselves — itineraries shaped around your preferences, with room to breathe.</p><p>Every tour on this site is one we have run in person.</p>',
 
     'contact.title': 'Contact us',
     'contact.lead': 'Questions about a tour, dates, or a custom itinerary? Send us a note.',
@@ -107,14 +106,13 @@ export const TRANSLATIONS = {
     'nav.about': 'Biz haqimizda',
     'nav.contact': 'Aloqa',
 
-    'footer.tagline': "Boshidan oxirigacha rejalashtirilgan kichik guruhli sayohatlar.",
+    'footer.tagline': "Sizga moslab tuzilgan, boshidan oxirigacha rejalashtirilgan sayohatlar.",
     'footer.rights': 'Barcha huquqlar himoyalangan.',
     'footer.admin': 'Admin',
 
-    'home.eyebrow': 'Kichik guruhlar · Mahalliy gidlar',
     'home.title': 'Orzularingizni sayohatlarga aylantiramiz',
     'home.lead':
-      "Biz eng yaxshi biladigan joylar bo'ylab qo'lda tuzilgan marshrutlar — barcha tashkiliy ishlar bizning zimmamizda, siz shunchaki kelasiz.",
+      "Har bir sayohat betakror bo'lishi kerak. Shuning uchun biz marshrutlarni sizning didingizga moslab tuzamiz, yo'ldagi har bir tafsilotni o'z zimmamizga olamiz va sayohatingizni muammosiz, qulay va chinakam unutilmas qilamiz.",
     'home.browseTours': "Turlarni ko'rish",
     'home.exploreDestinations': "Yo'nalishlarni o'rganish",
     'home.featured': 'Tanlangan turlar',
@@ -169,7 +167,7 @@ export const TRANSLATIONS = {
 
     'about.title': 'Ddinovs Travel haqida',
     'about.body':
-      "<p>Biz gid va rejalashtiruvchilardan iborat kichik jamoamiz — o'zimiz bormoqchi bo'lgan sayohatlarni tuzamiz: kichik guruhlar, mahalliy hamkorlar va shoshilinch bo'lmagan marshrutlar.</p><p>Ushbu saytdagi har bir turni biz shaxsan o'tkazganmiz.</p>",
+      "<p>Biz gid va rejalashtiruvchilardan iborat jamoamiz — o'zimiz bormoqchi bo'lgan sayohatlarni tuzamiz: sizning didingizga moslangan, shoshilinch bo'lmagan marshrutlar.</p><p>Ushbu saytdagi har bir turni biz shaxsan o'tkazganmiz.</p>",
 
     'contact.title': "Biz bilan bog'laning",
     'contact.lead':
@@ -201,14 +199,13 @@ export const TRANSLATIONS = {
     'nav.about': 'О нас',
     'nav.contact': 'Контакты',
 
-    'footer.tagline': 'Путешествия малыми группами, спланированные от и до.',
+    'footer.tagline': 'Индивидуальные путешествия, спланированные от и до.',
     'footer.rights': 'Все права защищены.',
     'footer.admin': 'Админ',
 
-    'home.eyebrow': 'Малые группы · Местные гиды',
     'home.title': 'Превращаем ваши мечты в путешествия',
     'home.lead':
-      'Маршруты, составленные вручную по местам, которые мы знаем лучше всего — всю логистику берём на себя, вам остаётся просто приехать.',
+      'Каждое путешествие должно быть уникальным. Поэтому мы составляем маршруты под ваши предпочтения, берём на себя каждую деталь в пути и делаем поездку комфортной, беззаботной и по-настоящему незабываемой.',
     'home.browseTours': 'Смотреть туры',
     'home.exploreDestinations': 'Открыть направления',
     'home.featured': 'Избранные туры',
@@ -262,7 +259,7 @@ export const TRANSLATIONS = {
 
     'about.title': 'О Ddinovs Travel',
     'about.body':
-      '<p>Мы небольшая команда гидов и организаторов, которая делает поездки, в которые поехали бы сами — небольшие группы, местные партнёры и маршруты без спешки.</p><p>Каждый тур на этом сайте мы провели лично.</p>',
+      '<p>Мы команда гидов и организаторов, которая делает поездки, в которые поехали бы сами — маршруты под ваши предпочтения и без спешки.</p><p>Каждый тур на этом сайте мы провели лично.</p>',
 
     'contact.title': 'Свяжитесь с нами',
     'contact.lead':

@@ -325,14 +325,6 @@ textarea.field__control { resize: vertical; }
   color: #fff;
   padding-block: 5rem;
 }
-.hero__eyebrow {
-  font-family: var(--font);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.74rem;
-  font-weight: 600;
-  opacity: 0.85;
-}
 .hero h1 {
   font-size: clamp(2.4rem, 5.4vw, 3.75rem);
   line-height: 1.06;
