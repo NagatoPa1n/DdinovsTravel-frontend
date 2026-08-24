@@ -21,7 +21,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'We turn your dreams into journeys',
     'home.lead':
-      "Travelling with us is not simply about reaching a destination — it is about enjoying every moment of the way. We choose the finest routes, the most comfortable arrangements and the impressions you will never forget. You do the dreaming; we handle the rest. Leave your journey in trusted hands. ✈️",
+      'Dream it, and we’ll turn it into an unforgettable journey. Choose us for comfort, confidence, and experiences you’ll cherish forever. ✈️',
     'home.browseTours': 'Browse tours',
     'home.exploreDestinations': 'Explore destinations',
     'home.featured': 'Featured tours',
