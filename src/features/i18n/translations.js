@@ -21,7 +21,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'We turn your dreams into journeys',
     'home.lead':
-      "Every journey should be unique. That's why we create itineraries tailored to your preferences, handle every detail along the way, and make your trip seamless, comfortable, and truly unforgettable.",
+      'Dream it, and we’ll turn it into an unforgettable journey. Choose us for comfort, confidence, and experiences you’ll cherish forever. ✈️',
     'home.browseTours': 'Browse tours',
     'home.exploreDestinations': 'Explore destinations',
     'home.featured': 'Featured tours',
@@ -112,7 +112,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'Orzularingizni sayohatlarga aylantiramiz',
     'home.lead':
-      "Har bir sayohat betakror bo'lishi kerak. Shuning uchun biz marshrutlarni sizning didingizga moslab tuzamiz, yo'ldagi har bir tafsilotni o'z zimmamizga olamiz va sayohatingizni muammosiz, qulay va chinakam unutilmas qilamiz.",
+      'Siz orzu qiling — biz uni esda qolarli sayohatga aylantiramiz. Qulaylik, ishonch va unutilmas taassurotlar uchun bizni tanlang. ✈️',
     'home.browseTours': "Turlarni ko'rish",
     'home.exploreDestinations': "Yo'nalishlarni o'rganish",
     'home.featured': 'Tanlangan turlar',
@@ -205,7 +205,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'Превращаем ваши мечты в путешествия',
     'home.lead':
-      'Каждое путешествие должно быть уникальным. Поэтому мы составляем маршруты под ваши предпочтения, берём на себя каждую деталь в пути и делаем поездку комфортной, беззаботной и по-настоящему незабываемой.',
+      'Мечтайте — а мы превратим это в незабываемое путешествие. Выбирайте нас ради комфорта, уверенности и впечатлений, которые останутся с вами навсегда. ✈️',
     'home.browseTours': 'Смотреть туры',
     'home.exploreDestinations': 'Открыть направления',
     'home.featured': 'Избранные туры',
