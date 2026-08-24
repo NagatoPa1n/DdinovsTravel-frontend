@@ -21,7 +21,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'We turn your dreams into journeys',
     'home.lead':
-      "Every journey should be unique. That's why we create itineraries tailored to your preferences, handle every detail along the way, and make your trip seamless, comfortable, and truly unforgettable.",
+      "Travelling with us is not simply about reaching a destination — it is about enjoying every moment of the way. We choose the finest routes, the most comfortable arrangements and the impressions you will never forget. You do the dreaming; we handle the rest. Leave your journey in trusted hands. ✈️",
     'home.browseTours': 'Browse tours',
     'home.exploreDestinations': 'Explore destinations',
     'home.featured': 'Featured tours',
@@ -112,7 +112,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'Orzularingizni sayohatlarga aylantiramiz',
     'home.lead':
-      "Har bir sayohat betakror bo'lishi kerak. Shuning uchun biz marshrutlarni sizning didingizga moslab tuzamiz, yo'ldagi har bir tafsilotni o'z zimmamizga olamiz va sayohatingizni muammosiz, qulay va chinakam unutilmas qilamiz.",
+      'Biz bilan sayohat qilish — shunchaki manzilga yetib borish emas, balki har bir lahzadan zavqlanishdir. Biz siz uchun eng yaxshi yo‘nalishlar, qulay sharoitlar va unutilmas taassurotlarni tanlaymiz. Siz orzu qiling, qolganini biz hal qilamiz. Sayohatingizni ishonchli qo‘llarga topshiring. ✈️',
     'home.browseTours': "Turlarni ko'rish",
     'home.exploreDestinations': "Yo'nalishlarni o'rganish",
     'home.featured': 'Tanlangan turlar',
@@ -205,7 +205,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'Превращаем ваши мечты в путешествия',
     'home.lead':
-      'Каждое путешествие должно быть уникальным. Поэтому мы составляем маршруты под ваши предпочтения, берём на себя каждую деталь в пути и делаем поездку комфортной, беззаботной и по-настоящему незабываемой.',
+      'Путешествие с нами — это не просто добраться до места, а насладиться каждым мгновением пути. Мы выбираем для вас лучшие маршруты, комфортные условия и незабываемые впечатления. Вы мечтайте — об остальном позаботимся мы. Доверьте своё путешествие надёжным рукам. ✈️',
     'home.browseTours': 'Смотреть туры',
     'home.exploreDestinations': 'Открыть направления',
     'home.featured': 'Избранные туры',
