@@ -112,7 +112,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'Orzularingizni sayohatlarga aylantiramiz',
     'home.lead':
-      'Biz bilan sayohat qilish — shunchaki manzilga yetib borish emas, balki har bir lahzadan zavqlanishdir. Biz siz uchun eng yaxshi yo‘nalishlar, qulay sharoitlar va unutilmas taassurotlarni tanlaymiz. Siz orzu qiling, qolganini biz hal qilamiz. Sayohatingizni ishonchli qo‘llarga topshiring. ✈️',
+      'Siz orzu qiling — biz uni esda qolarli sayohatga aylantiramiz. Qulaylik, ishonch va unutilmas taassurotlar uchun bizni tanlang. ✈️',
     'home.browseTours': "Turlarni ko'rish",
     'home.exploreDestinations': "Yo'nalishlarni o'rganish",
     'home.featured': 'Tanlangan turlar',
@@ -205,7 +205,7 @@ export const TRANSLATIONS = {
 
     'home.title': 'Превращаем ваши мечты в путешествия',
     'home.lead':
-      'Путешествие с нами — это не просто добраться до места, а насладиться каждым мгновением пути. Мы выбираем для вас лучшие маршруты, комфортные условия и незабываемые впечатления. Вы мечтайте — об остальном позаботимся мы. Доверьте своё путешествие надёжным рукам. ✈️',
+      'Мечтайте — а мы превратим это в незабываемое путешествие. Выбирайте нас ради комфорта, уверенности и впечатлений, которые останутся с вами навсегда. ✈️',
     'home.browseTours': 'Смотреть туры',
     'home.exploreDestinations': 'Открыть направления',
     'home.featured': 'Избранные туры',
