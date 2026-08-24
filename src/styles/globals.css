@@ -15,7 +15,9 @@
   --radius-lg: 16px;
   --shadow: 0 1px 2px rgba(13, 30, 60, 0.07), 0 8px 24px rgba(13, 30, 60, 0.07);
   --sidebar-width: 240px;
-  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  /* Manrope for everything you read at speed, Playfair Display for the voice. */
+  --font: 'Manrope', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Playfair Display', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
 }
 
 *,
@@ -34,24 +36,50 @@ body {
   margin: 0;
   font-family: var(--font);
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--text);
   background: var(--bg);
+  font-optical-sizing: auto;
+  font-feature-settings: 'kern' 1, 'liga' 1;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3 {
   margin: 0 0 0.4em;
-  line-height: 1.2;
-  font-weight: 650;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.08rem; }
+
+/* The admin panel is a dense staff tool: it keeps the sans, where a serif would
+   cost legibility at small sizes and in tight table rows. */
+.admin-layout h1,
+.admin-layout h2,
+.admin-layout h3,
+.login__card h1 {
+  font-family: var(--font);
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
-h1 { font-size: 1.9rem; }
-h2 { font-size: 1.3rem; }
-h3 { font-size: 1.05rem; }
+/* Figures line up column-wise wherever they are compared. */
+.table td,
+.pagination,
+.tour-card__price,
+.booking-card__price,
+.booking-card__facts dd {
+  font-variant-numeric: tabular-nums;
+}
 
 p { margin: 0 0 1em; }
 
@@ -257,8 +285,10 @@ textarea.field__control { resize: vertical; }
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  font-weight: 650;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .brand__mark {
   width: 26px;
@@ -269,7 +299,9 @@ textarea.field__control { resize: vertical; }
 .site-nav {
   display: flex;
   gap: 1.4rem;
-  font-size: 0.95rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+  letter-spacing: 0.005em;
 }
 .site-nav a:hover,
 .site-nav a.is-active { color: var(--accent); }
@@ -294,13 +326,19 @@ textarea.field__control { resize: vertical; }
   padding-block: 5rem;
 }
 .hero__eyebrow {
+  font-family: var(--font);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  font-weight: 600;
   opacity: 0.85;
 }
-.hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
-.hero__lead { max-width: 44ch; opacity: 0.9; font-size: 1.06rem; }
+.hero h1 {
+  font-size: clamp(2.4rem, 5.4vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+}
+.hero__lead { max-width: 46ch; opacity: 0.9; font-size: 1.08rem; line-height: 1.65; }
 .hero__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
 .hero .btn--ghost { color: #fff; border-color: rgba(255, 255, 255, 0.45); }
 .hero .btn--ghost:hover { background: rgba(255, 255, 255, 0.12); }
@@ -343,8 +381,42 @@ textarea.field__control { resize: vertical; }
 .tour-card__body { padding: 1rem 1.1rem 1.2rem; }
 .tour-card__meta { font-size: 0.85rem; color: var(--text-muted); }
 .tour-card__excerpt { font-size: 0.92rem; color: var(--text-muted); }
-.tour-card__price { font-weight: 650; margin: 0; }
+/* Prices stay in the UI sans: figures line up and read faster than in the display serif. */
+.tour-card__price {
+  font-family: var(--font);
+  font-size: 1.12rem;
+  font-weight: 600;
+  margin: 0;
+}
 .tour-card__price s { color: var(--text-muted); font-weight: 400; margin-left: 0.5rem; }
+/* Sits opposite .tour-card__tag so a tour can carry both without them colliding. */
+.tour-card__discount {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: var(--danger);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  box-shadow: 0 1px 6px rgba(13, 30, 60, 0.25);
+}
+.tour-card__unit {
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 0.35rem;
+}
+.tour-card__saving {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--success);
+}
 
 .destination-card {
   position: relative;
@@ -381,7 +453,12 @@ textarea.field__control { resize: vertical; }
   opacity: 0.5;
 }
 .tour-details__hero-body { position: relative; padding-block: 5rem 3rem; }
-.tour-details__hero-body h1 { font-size: clamp(2rem, 4vw, 3rem); margin-top: 0.6rem; }
+.tour-details__hero-body h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.15rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-top: 0.6rem;
+}
 .tour-details__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
@@ -400,11 +477,12 @@ textarea.field__control { resize: vertical; }
   border-top: 1px solid var(--border);
 }
 .itinerary__day {
-  font-size: 0.8rem;
+  font-family: var(--font);
+  font-size: 0.76rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
 }
 .itinerary h3 { margin-bottom: 0.2em; }
 .itinerary p { margin: 0; color: var(--text-muted); }
@@ -421,7 +499,92 @@ textarea.field__control { resize: vertical; }
 
 .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
-.gallery img { border-radius: var(--radius); aspect-ratio: 4 / 3; object-fit: cover; }
+.gallery img { border-radius: var(--radius); aspect-ratio: 4 / 3; object-fit: cover; width: 100%; display: block; }
+/* Thumbnails are buttons so the viewer opens from the keyboard as well as the mouse. */
+.gallery__item {
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.gallery__item:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.gallery__item:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* -------------------------------------------------------------- lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: 3.5rem 1rem;
+}
+.lightbox__backdrop { position: absolute; inset: 0; background: rgba(8, 17, 33, 0.92); }
+.lightbox__figure {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 100%;
+}
+.lightbox__figure img {
+  max-width: min(1200px, 92vw);
+  max-height: 82vh;
+  width: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+.lightbox__counter {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  cursor: pointer;
+  line-height: 1;
+  transition: background 0.15s ease;
+}
+.lightbox__close:hover,
+.lightbox__nav:hover { background: rgba(255, 255, 255, 0.24); }
+.lightbox__close:focus-visible,
+.lightbox__nav:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lightbox__close {
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  font-size: 1.6rem;
+}
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  font-size: 2rem;
+}
+.lightbox__nav--prev { left: 1rem; }
+.lightbox__nav--next { right: 1rem; }
+
+@media (max-width: 640px) {
+  .lightbox { padding: 3.5rem 0.5rem; }
+  .lightbox__nav { width: 40px; height: 40px; }
+  .lightbox__nav--prev { left: 0.35rem; }
+  .lightbox__nav--next { right: 0.35rem; }
+}
 
 .booking-card {
   position: sticky;
@@ -432,7 +595,13 @@ textarea.field__control { resize: vertical; }
   box-shadow: var(--shadow);
   background: var(--surface);
 }
-.booking-card__price { font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; }
+.booking-card__price {
+  font-family: var(--font);
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
 .booking-card__price s { font-size: 1rem; font-weight: 400; color: var(--text-muted); margin-left: 0.5rem; }
 .booking-card__facts { margin: 0 0 1.25rem; }
 .booking-card__facts > div {
@@ -474,8 +643,21 @@ textarea.field__control { resize: vertical; }
   gap: 2rem;
   flex-wrap: wrap;
 }
-.site-footer__tagline { color: var(--text-muted); max-width: 34ch; margin-top: 0.5rem; }
-.site-footer__links { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.92rem; }
+.site-footer__tagline { color: var(--text-muted); max-width: 36ch; margin-top: 0.5rem; }
+/* Contact details between the tagline and the social row. Plain text, no links. */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 36ch;
+}
+/* Matches .site-nav so the same link set reads the same top and bottom. */
+.site-footer__links { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.92rem; font-weight: 600; }
 .site-footer__legal {
   display: flex;
   justify-content: space-between;
@@ -520,7 +702,9 @@ textarea.field__control { resize: vertical; }
   align-items: center;
   gap: 0.55rem;
   color: #fff;
-  font-weight: 650;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
   padding: 0 0.5rem 1.25rem;
 }
 .sidebar__brand-mark { width: 24px; height: 24px; flex: none; color: #fff; }

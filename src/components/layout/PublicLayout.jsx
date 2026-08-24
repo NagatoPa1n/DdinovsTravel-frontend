@@ -1,6 +1,7 @@
 import { Link, Outlet } from 'react-router-dom'
 import Logo from '@/components/ui/Logo'
 import Header from './Header'
+import FooterContact from './FooterContact'
 import SocialLinks from './SocialLinks'
 import { useTranslation } from '@/hooks/useTranslation'
 
@@ -21,6 +22,7 @@ export default function PublicLayout() {
               Ddinovs Travel
             </div>
             <p className="site-footer__tagline">{t('footer.tagline')}</p>
+            <FooterContact />
             <SocialLinks />
           </div>
           <nav className="site-footer__links">

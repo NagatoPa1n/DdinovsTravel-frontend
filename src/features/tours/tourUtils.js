@@ -12,7 +12,7 @@ export const emptyTour = () => ({
   excerpt: '',
   description: '',
   price: '',
-  currency: 'USD',
+  currency: 'UZS',
   discountPrice: '',
   days: '',
   nights: '',
@@ -40,6 +40,14 @@ export const discountPercent = (tour) => {
   const discount = Number(tour?.discountPrice ?? 0)
   if (!price || !discount || discount >= price) return 0
   return Math.round(((price - discount) / price) * 100)
+}
+
+/** What the traveller keeps by booking at the sale price; 0 when the tour is not discounted. */
+export const savedAmount = (tour) => {
+  const price = Number(tour?.price ?? 0)
+  const discount = Number(tour?.discountPrice ?? 0)
+  if (!price || !discount || discount >= price) return 0
+  return price - discount
 }
 
 export const emptyItineraryDay = (index) => ({

@@ -1,0 +1,35 @@
+# Apache/cPanel only; ignored by nginx.
+#
+# The site is a single-page app: only index.html exists on disk, and the router draws
+# /tours, /contact and the rest in the browser. Without this, loading or refreshing any
+# address other than "/" asks Apache for a file that is not there and returns 404.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Anything that really exists (JS, CSS, images) is served as-is.
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # The API is proxied elsewhere; never rewrite it to the app shell.
+  RewriteRule ^api/ - [L]
+
+  # Everything else hands the app shell to the router.
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Hashed filenames never change contents, so they can be cached hard.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# index.html must not be cached, or visitors keep loading an old build.
+<IfModule mod_headers.c>
+  <FilesMatch "index\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>

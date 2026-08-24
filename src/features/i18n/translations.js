@@ -20,7 +20,7 @@ export const TRANSLATIONS = {
     'footer.admin': 'Admin',
 
     'home.eyebrow': 'Small groups · Local guides',
-    'home.title': 'Journeys worth the distance',
+    'home.title': 'We turn your dreams into journeys',
     'home.lead':
       'Hand-built itineraries across the places we know best — with the logistics handled so you can just show up.',
     'home.browseTours': 'Browse tours',
@@ -52,12 +52,15 @@ export const TRANSLATIONS = {
     'destinations.empty': 'No destinations published yet.',
     'destinations.tourCount': '{count} tours',
 
+    'tour.perPerson': '/ per person',
+    'tour.save': 'Save {amount}',
     'tour.about': 'About this trip',
     'tour.itinerary': 'Itinerary',
     'tour.day': 'Day {n}',
     'tour.included': 'What is included',
     'tour.notIncluded': 'Not included',
     'tour.gallery': 'Gallery',
+    'tour.viewImage': 'View image {n} full size',
     'tour.duration': 'Duration',
     'tour.groupSize': 'Group size',
     'tour.upTo': 'Up to {n}',
@@ -109,7 +112,7 @@ export const TRANSLATIONS = {
     'footer.admin': 'Admin',
 
     'home.eyebrow': 'Kichik guruhlar · Mahalliy gidlar',
-    'home.title': 'Masofaga arziydigan sayohatlar',
+    'home.title': 'Orzularingizni sayohatlarga aylantiramiz',
     'home.lead':
       "Biz eng yaxshi biladigan joylar bo'ylab qo'lda tuzilgan marshrutlar — barcha tashkiliy ishlar bizning zimmamizda, siz shunchaki kelasiz.",
     'home.browseTours': "Turlarni ko'rish",
@@ -142,12 +145,15 @@ export const TRANSLATIONS = {
     'destinations.empty': "Hali yo'nalishlar chop etilmagan.",
     'destinations.tourCount': '{count} ta tur',
 
+    'tour.perPerson': '/ 1 kishi uchun',
+    'tour.save': '{amount} tejaysiz',
     'tour.about': 'Sayohat haqida',
     'tour.itinerary': 'Marshrut',
     'tour.day': '{n}-kun',
     'tour.included': 'Narxga nima kiradi',
     'tour.notIncluded': 'Narxga kirmaydi',
     'tour.gallery': 'Galereya',
+    'tour.viewImage': "{n}-rasmni to'liq ko'rish",
     'tour.duration': 'Davomiyligi',
     'tour.groupSize': 'Guruh hajmi',
     'tour.upTo': '{n} kishigacha',
@@ -200,7 +206,7 @@ export const TRANSLATIONS = {
     'footer.admin': 'Админ',
 
     'home.eyebrow': 'Малые группы · Местные гиды',
-    'home.title': 'Путешествия, которые стоят пути',
+    'home.title': 'Превращаем ваши мечты в путешествия',
     'home.lead':
       'Маршруты, составленные вручную по местам, которые мы знаем лучше всего — всю логистику берём на себя, вам остаётся просто приехать.',
     'home.browseTours': 'Смотреть туры',
@@ -232,12 +238,15 @@ export const TRANSLATIONS = {
     'destinations.empty': 'Направления пока не опубликованы.',
     'destinations.tourCount': 'Туров: {count}',
 
+    'tour.perPerson': '/ за человека',
+    'tour.save': 'Экономия {amount}',
     'tour.about': 'О путешествии',
     'tour.itinerary': 'Маршрут',
     'tour.day': 'День {n}',
     'tour.included': 'Что включено',
     'tour.notIncluded': 'Не включено',
     'tour.gallery': 'Галерея',
+    'tour.viewImage': 'Открыть изображение {n}',
     'tour.duration': 'Длительность',
     'tour.groupSize': 'Размер группы',
     'tour.upTo': 'До {n}',

@@ -8,6 +8,7 @@
 export const SOCIAL_NETWORKS = [
   { key: 'instagram', label: 'Instagram' },
   { key: 'telegram', label: 'Telegram' },
+  { key: 'whatsapp', label: 'WhatsApp' },
   { key: 'facebook', label: 'Facebook' },
   { key: 'youtube', label: 'YouTube' },
   { key: 'tiktok', label: 'TikTok' },

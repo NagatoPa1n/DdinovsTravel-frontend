@@ -8,6 +8,9 @@ import { api } from '@/services/api'
 import { validate, required, email as emailRule, phone as phoneRule } from '@/utils/validation'
 import { useTranslation } from '@/hooks/useTranslation'
 
+/** Spaces and brackets are fine to read but not to dial. */
+const telHref = (number) => `tel:${String(number).replace(/[^\d+]/g, '')}`
+
 export default function Contact() {
   const toast = useToast()
   const { t, language } = useTranslation()
@@ -83,7 +86,13 @@ export default function Contact() {
         <h2>{t('contact.getInTouch')}</h2>
         <dl>
           {details.email && <div><dt>{t('contact.email')}</dt><dd><a href={`mailto:${details.email}`}>{details.email}</a></dd></div>}
-          {details.phone && <div><dt>{t('contact.phone')}</dt><dd><a href={`tel:${details.phone}`}>{details.phone}</a></dd></div>}
+          {details.phone && (
+            <div>
+              <dt>{t('contact.phone')}</dt>
+              <dd><a href={telHref(details.phone)}>{details.phone}</a></dd>
+              {details.phone2 && <dd><a href={telHref(details.phone2)}>{details.phone2}</a></dd>}
+            </div>
+          )}
           {details.address && <div><dt>{t('contact.office')}</dt><dd>{details.address}</dd></div>}
           {details.hours && <div><dt>{t('contact.hours')}</dt><dd>{details.hours}</dd></div>}
         </dl>

@@ -5,7 +5,7 @@ import { useToast } from '@/components/ui/Toast'
 import { pageApi } from '@/features/pages/pageApi'
 import { validate, email as emailRule } from '@/utils/validation'
 
-const DEFAULTS = { email: '', phone: '', whatsapp: '', address: '', hours: '', mapEmbed: '' }
+const DEFAULTS = { email: '', phone: '', phone2: '', whatsapp: '', address: '', hours: '', mapEmbed: '' }
 const RULES = { email: [emailRule()] }
 
 export default function ContactSettings() {
@@ -55,6 +55,7 @@ export default function ContactSettings() {
           <div className="grid-2">
             <Input label="Email" name="email" type="email" value={form.email} onChange={change} error={errors.email} />
             <Input label="Phone" name="phone" value={form.phone} onChange={change} />
+            <Input label="Second phone" name="phone2" value={form.phone2} onChange={change} hint="Optional" />
             <Input label="WhatsApp" name="whatsapp" value={form.whatsapp} onChange={change} />
             <Input label="Opening hours" name="hours" value={form.hours} onChange={change} />
           </div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
+import Lightbox from '@/components/ui/Lightbox'
 import { tourApi } from '@/features/tours/tourApi'
 import { formatPrice } from '@/utils/formatPrice'
 import { discountPercent, tourImage } from '@/features/tours/tourUtils'
@@ -19,6 +20,8 @@ export default function TourDetails() {
   const { t, duration, language } = useTranslation()
   const [tour, setTour] = useState(null)
   const [status, setStatus] = useState('loading')
+  // -1 while the gallery viewer is closed.
+  const [lightboxIndex, setLightboxIndex] = useState(-1)
 
   useEffect(() => {
     let active = true
@@ -110,8 +113,16 @@ export default function TourDetails() {
             <section>
               <h2>{t('tour.gallery')}</h2>
               <div className="gallery">
-                {tour.gallery.map((media) => (
-                  <img key={media.id} src={media.url} alt={media.alt || tour.title} loading="lazy" />
+                {tour.gallery.map((media, position) => (
+                  <button
+                    key={media.id}
+                    type="button"
+                    className="gallery__item"
+                    onClick={() => setLightboxIndex(position)}
+                    aria-label={t('tour.viewImage', { n: position + 1 })}
+                  >
+                    <img src={media.url} alt={media.alt || tour.title} loading="lazy" />
+                  </button>
                 ))}
               </div>
             </section>
@@ -154,6 +165,14 @@ export default function TourDetails() {
           </div>
         </aside>
       </div>
+
+      <Lightbox
+        images={tour.gallery || []}
+        index={lightboxIndex}
+        onIndex={setLightboxIndex}
+        onClose={() => setLightboxIndex(-1)}
+        label={t('tour.gallery')}
+      />
     </article>
   )
 }
