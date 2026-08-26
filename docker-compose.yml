@@ -5,3 +5,4 @@ services:
     restart: unless-stopped
     ports:
       - "${FRONTEND_PORT:-8010}:80"
+      - "${VITE_API_URL:-api}:api"
