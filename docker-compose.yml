@@ -9,3 +9,4 @@ services:
       - "${FRONTEND_PORT:-3030}:80"
     environment:
       - "${BACKEND_API:-8010}:80"
+      - "${VITE_API_URL:-api.ddinovstravel.uz}
