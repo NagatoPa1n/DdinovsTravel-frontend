@@ -2,7 +2,10 @@ services:
   frontend:
     build:
       context: .
+    image: ddinovstravel-frontend:latest
+    container_name: ddinovstravel-frontend
     restart: unless-stopped
     ports:
       - "${FRONTEND_PORT:-8010}:80"
-      - "${VITE_API_URL:-api}:api"
+    environment:
+      - "${BACKEND_API:-8010}:80"
