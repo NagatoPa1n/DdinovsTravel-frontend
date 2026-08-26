@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8010}:80"
