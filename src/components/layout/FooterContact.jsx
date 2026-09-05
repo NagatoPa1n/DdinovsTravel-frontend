@@ -13,7 +13,7 @@ import { pageApi } from '@/features/pages/pageApi'
  * re-entered. Setting a phone in Settings > Contact overrides this, so the number is
  * never printed twice.
  */
-const FALLBACK_PHONE = '+998 99 555 01 04'
+const FALLBACK_PHONE = '+998 20 022 55 45'
 
 export default function FooterContact() {
   const [details, setDetails] = useState({})
