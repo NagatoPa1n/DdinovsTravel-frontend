@@ -27,21 +27,35 @@ export function useMedia({ type = '', search = '', page = 1, limit = 24 } = {}) 
     load()
   }, [load])
 
+  /**
+   * Uploads a batch, keeping whatever succeeded.
+   *
+   * One rejected file used to throw straight out of the loop, so the files after it were
+   * never attempted and its progress row was left behind forever — with nothing shown to
+   * explain any of it. Failures are collected and returned instead, for the caller to
+   * report.
+   */
   const upload = useCallback(async (files) => {
     const uploaded = []
+    const failed = []
     for (const file of Array.from(files)) {
-      const result = await uploadFile(file, {
-        onProgress: (percent) => setUploads((prev) => ({ ...prev, [file.name]: percent })),
-      })
-      uploaded.push(result?.media ?? result)
-      setUploads((prev) => {
-        const next = { ...prev }
-        delete next[file.name]
-        return next
-      })
+      try {
+        const result = await uploadFile(file, {
+          onProgress: (percent) => setUploads((prev) => ({ ...prev, [file.name]: percent })),
+        })
+        uploaded.push(result?.media ?? result)
+      } catch (err) {
+        failed.push({ file, error: err })
+      } finally {
+        setUploads((prev) => {
+          const next = { ...prev }
+          delete next[file.name]
+          return next
+        })
+      }
     }
-    setItems((prev) => [...uploaded, ...prev])
-    return uploaded
+    if (uploaded.length) setItems((prev) => [...uploaded, ...prev])
+    return { uploaded, failed }
   }, [])
 
   const remove = useCallback(async (id) => {

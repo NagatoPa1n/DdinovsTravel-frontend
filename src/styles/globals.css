@@ -990,6 +990,19 @@ textarea.field__control { resize: vertical; }
 .uploader.is-dragging { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, var(--surface)); }
 .uploader__hint { margin-bottom: 0.2rem; }
 .uploader__meta { font-size: 0.83rem; color: var(--text-muted); margin: 0; }
+.uploader__errors {
+  list-style: none;
+  padding: 0.6rem 0.75rem;
+  margin: 0.75rem 0 0;
+  display: grid;
+  gap: 0.3rem;
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--danger, #b42318);
+  background: color-mix(in srgb, var(--danger, #b42318) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--danger, #b42318) 25%, transparent);
+  border-radius: 8px;
+}
 .uploader__progress { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0.4rem; }
 .uploader__progress li {
   display: grid;
