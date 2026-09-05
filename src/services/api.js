@@ -16,10 +16,19 @@ export class ApiError extends Error {
   }
 }
 
-/** Sort values the UI uses, translated to Spring Data's `property,direction`. */
+/**
+ * Sort values the UI uses, translated to Spring Data's `property,direction`.
+ *
+ * Anything missing here is forwarded verbatim and Spring reads it as an entity property,
+ * so an unmapped UI value ("price_asc") raises PropertyReferenceException and the request
+ * answers 500. Every option offered by the tours filter needs an entry.
+ */
 const SORT_ALIASES = {
   newest: 'id,desc',
   oldest: 'id,asc',
+  price_asc: 'price,asc',
+  price_desc: 'price,desc',
+  duration: 'days,asc',
 }
 
 /**
