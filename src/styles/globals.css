@@ -119,6 +119,15 @@ img {
   color: var(--text-muted);
 }
 .state--error { color: var(--danger); }
+.state--success { color: var(--success); font-weight: 550; }
+
+/* Two stacked full-width actions in the booking card need to breathe. */
+.booking-card__cta + .booking-card__cta { margin-top: 0.6rem; }
+
+.enquiry__form { max-width: 34rem; }
+/* The tour is shown for confirmation, not for editing. */
+.enquiry__form input[readonly] { background: var(--bg-muted); cursor: default; }
+.enquiry__done { display: grid; gap: 1rem; justify-items: start; }
 
 .route-loading {
   display: grid;

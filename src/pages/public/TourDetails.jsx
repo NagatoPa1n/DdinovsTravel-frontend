@@ -9,9 +9,11 @@ import { discountPercent, tourImage } from '@/features/tours/tourUtils'
 import { useTranslation } from '@/hooks/useTranslation'
 
 /**
- * Tour enquiries go straight to the agency's Telegram, not the contact form.
+ * Where "Contact us" goes: a direct chat with the account that answers enquiries.
+ *
  * Deliberately not the footer's Settings → Social telegram link, which points at the
- * public channel (@ddinovstravel) rather than the account that answers enquiries.
+ * public channel (@ddinovstravel) rather than a person. Sits beside the enquiry form so
+ * a visitor who would rather type than wait for a call back has somewhere to go.
  */
 const TELEGRAM_ENQUIRY_URL = 'https://t.me/ddinovs'
 
@@ -153,14 +155,18 @@ export default function TourDetails() {
                 </div>
               )}
             </dl>
+            <Button to={`/tours/${tour.slug}/enquire`} size="lg" className="booking-card__cta">
+              {t('tour.enquire')}
+            </Button>
             <Button
               href={TELEGRAM_ENQUIRY_URL}
               target="_blank"
               rel="noreferrer noopener"
               size="lg"
+              variant="ghost"
               className="booking-card__cta"
             >
-              {t('tour.enquire')}
+              {t('tour.contactUs')}
             </Button>
           </div>
         </aside>
