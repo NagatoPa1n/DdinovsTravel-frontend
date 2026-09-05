@@ -24,6 +24,13 @@ const RULES = {
   // The API rejects a tour with no destination, so catch it here rather than
   // letting the save fail with a generic "Validation failed".
   destinationId: [required('Choose a destination')],
+  // Both are "YYYY-MM-DD", so a string compare orders them correctly.
+  endDate: [
+    [
+      (value, form) => !value || !form.startDate || value >= form.startDate,
+      'The end date cannot be before the start date',
+    ],
+  ],
 }
 
 /** Shared create/edit form. `initial` seeds the fields; `onSubmit` receives raw form state. */
@@ -111,7 +118,7 @@ export default function TourForm({ initial, onSubmit, submitting, submitLabel = 
       </section>
 
       <section className="panel">
-        <h2>Pricing and length</h2>
+        <h2>Pricing, length and dates</h2>
         <div className="grid-3">
           <Input label="Price" name="price" type="number" min="0" value={form.price} onChange={change} error={errors.price} required />
           <Input label="Discounted price" name="discountPrice" type="number" min="0" value={form.discountPrice ?? ''} onChange={change} />
@@ -123,6 +130,25 @@ export default function TourForm({ initial, onSubmit, submitting, submitLabel = 
           <Input label="Days" name="days" type="number" min="1" value={form.days} onChange={change} error={errors.days} required />
           <Input label="Nights" name="nights" type="number" min="0" value={form.nights} onChange={change} />
           <Input label="Max group size" name="groupSize" type="number" min="1" value={form.groupSize} onChange={change} />
+        </div>
+        <div className="grid-2">
+          <Input
+            label="Start date"
+            name="startDate"
+            type="date"
+            value={form.startDate || ''}
+            onChange={change}
+            hint="Leave both blank for a tour that runs on request"
+          />
+          <Input
+            label="End date"
+            name="endDate"
+            type="date"
+            min={form.startDate || undefined}
+            value={form.endDate || ''}
+            onChange={change}
+            error={errors.endDate}
+          />
         </div>
       </section>
 

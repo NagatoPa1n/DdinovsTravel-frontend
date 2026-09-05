@@ -7,10 +7,11 @@ import { useTours } from '@/hooks/useTours'
 import { categoryApi } from '@/features/categories/categoryApi'
 import { formatPrice } from '@/utils/formatPrice'
 import { discountPercent, tourImage } from '@/features/tours/tourUtils'
+import { formatDateRange } from '@/utils/formatDate'
 import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Tours() {
-  const { t, duration, language } = useTranslation()
+  const { t, duration, language, locale } = useTranslation()
   const [params, setParams] = useSearchParams()
   const [categories, setCategories] = useState([])
 
@@ -95,6 +96,7 @@ export default function Tours() {
         <div className="card-grid">
           {tours.map((tour) => {
             const off = discountPercent(tour)
+            const dates = formatDateRange(tour.startDate, tour.endDate, locale)
             return (
               <Link key={tour.id} to={`/tours/${tour.slug}`} className="tour-card">
                 <div className="tour-card__media">
@@ -108,6 +110,7 @@ export default function Tours() {
                   <p className="tour-card__meta">
                     {tour.destination?.name} · {duration(tour.days, tour.nights)}
                   </p>
+                  {dates && <p className="tour-card__dates">{dates}</p>}
                   <p className="tour-card__excerpt">{tour.excerpt}</p>
                   <p className="tour-card__price">
                     {formatPrice(tour.discountPrice || tour.price, tour.currency)}

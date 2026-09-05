@@ -3,7 +3,7 @@ import Badge from '@/components/ui/Badge'
 import Button from '@/components/ui/Button'
 import { useTour } from '@/hooks/useTours'
 import { formatPrice } from '@/utils/formatPrice'
-import { formatDuration } from '@/utils/formatDate'
+import { formatDateRange, formatDuration } from '@/utils/formatDate'
 
 /** Renders the tour exactly as the public page would, including drafts. */
 export default function TourPreview() {
@@ -12,6 +12,8 @@ export default function TourPreview() {
 
   if (loading) return <p className="state">Loading preview…</p>
   if (error || !tour) return <p className="state state--error">Could not load that tour.</p>
+
+  const dates = formatDateRange(tour.startDate, tour.endDate)
 
   return (
     <>
@@ -33,6 +35,7 @@ export default function TourPreview() {
         <p className="muted">
           {tour.destination?.name} · {formatDuration(tour.days, tour.nights)} ·{' '}
           {formatPrice(tour.discountPrice || tour.price, tour.currency)}
+          {dates && <> · {dates}</>}
         </p>
         <p>{tour.excerpt}</p>
         <div className="prose" dangerouslySetInnerHTML={{ __html: tour.description || '' }} />

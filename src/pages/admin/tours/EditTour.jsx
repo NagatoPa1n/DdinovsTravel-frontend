@@ -8,6 +8,7 @@ import { useTour } from '@/hooks/useTours'
 import { tourApi } from '@/features/tours/tourApi'
 import { apiErrorMessage } from '@/services/api'
 import { toTourPayload } from '@/features/tours/tourUtils'
+import { toInputDate } from '@/utils/formatDate'
 
 export default function EditTour() {
   const { id } = useParams()
@@ -20,6 +21,9 @@ export default function EditTour() {
     return {
       ...tour,
       destinationId: tour.destinationId ?? tour.destination?.id ?? '',
+      // <input type="date"> needs a string; a null would make the field uncontrolled.
+      startDate: toInputDate(tour.startDate),
+      endDate: toInputDate(tour.endDate),
       categoryIds: tour.categoryIds ?? (tour.categories || []).map((category) => category.id),
       gallery: tour.gallery ?? [],
       itinerary: tour.itinerary ?? [],

@@ -4,11 +4,12 @@ import { destinationApi } from '@/features/destinations/destinationApi'
 import { tourApi } from '@/features/tours/tourApi'
 import { formatPrice } from '@/utils/formatPrice'
 import { tourImage } from '@/features/tours/tourUtils'
+import { formatDateRange } from '@/utils/formatDate'
 import { useTranslation } from '@/hooks/useTranslation'
 
 export default function DestinationDetails() {
   const { slug } = useParams()
-  const { t, duration, language } = useTranslation()
+  const { t, duration, language, locale } = useTranslation()
   const [destination, setDestination] = useState(null)
   const [tours, setTours] = useState([])
   const [status, setStatus] = useState('loading')
@@ -64,20 +65,24 @@ export default function DestinationDetails() {
           <p className="state">{t('destination.empty')}</p>
         ) : (
           <div className="card-grid">
-            {tours.map((tour) => (
-              <Link key={tour.id} to={`/tours/${tour.slug}`} className="tour-card">
-                <div className="tour-card__media">
-                  {tourImage(tour)?.url && (
-                    <img src={tourImage(tour).url} alt={tour.title} loading="lazy" />
-                  )}
-                </div>
-                <div className="tour-card__body">
-                  <h3>{tour.title}</h3>
-                  <p className="tour-card__meta">{duration(tour.days, tour.nights)}</p>
-                  <p className="tour-card__price">{formatPrice(tour.discountPrice || tour.price, tour.currency)}</p>
-                </div>
-              </Link>
-            ))}
+            {tours.map((tour) => {
+              const dates = formatDateRange(tour.startDate, tour.endDate, locale)
+              return (
+                <Link key={tour.id} to={`/tours/${tour.slug}`} className="tour-card">
+                  <div className="tour-card__media">
+                    {tourImage(tour)?.url && (
+                      <img src={tourImage(tour).url} alt={tour.title} loading="lazy" />
+                    )}
+                  </div>
+                  <div className="tour-card__body">
+                    <h3>{tour.title}</h3>
+                    <p className="tour-card__meta">{duration(tour.days, tour.nights)}</p>
+                    {dates && <p className="tour-card__dates">{dates}</p>}
+                    <p className="tour-card__price">{formatPrice(tour.discountPrice || tour.price, tour.currency)}</p>
+                  </div>
+                </Link>
+              )
+            })}
           </div>
         )}
       </div>

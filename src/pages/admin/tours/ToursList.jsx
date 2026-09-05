@@ -11,7 +11,7 @@ import { useToast } from '@/components/ui/Toast'
 import { useTours } from '@/hooks/useTours'
 import { tourApi } from '@/features/tours/tourApi'
 import { formatPrice } from '@/utils/formatPrice'
-import { formatDate } from '@/utils/formatDate'
+import { formatDate, formatDateRange } from '@/utils/formatDate'
 import { TOUR_STATUSES } from '@/features/tours/tourUtils'
 
 export default function ToursList() {
@@ -45,6 +45,11 @@ export default function ToursList() {
       ),
     },
     { key: 'destination', header: 'Destination', render: (row) => row.destination?.name || '—' },
+    {
+      key: 'dates',
+      header: 'Dates',
+      render: (row) => formatDateRange(row.startDate, row.endDate) || '—',
+    },
     { key: 'price', header: 'Price', align: 'right', render: (row) => formatPrice(row.price, row.currency) },
     { key: 'status', header: 'Status', render: (row) => <Badge status={row.status} /> },
     { key: 'updatedAt', header: 'Updated', render: (row) => formatDate(row.updatedAt) },

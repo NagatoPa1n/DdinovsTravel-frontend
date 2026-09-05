@@ -373,6 +373,14 @@ textarea.field__control { resize: vertical; }
 .tour-card__body { padding: 1rem 1.1rem 1.2rem; }
 .tour-card__meta { font-size: 0.85rem; color: var(--text-muted); }
 .tour-card__excerpt { font-size: 0.92rem; color: var(--text-muted); }
+/* Departure window; set apart from the grey meta line because it is what a browsing
+   traveller scans for after the price. */
+.tour-card__dates {
+  font-size: 0.85rem;
+  font-weight: 550;
+  font-variant-numeric: tabular-nums;
+  margin: 0 0 0.35rem;
+}
 /* Prices stay in the UI sans: figures line up and read faster than in the display serif. */
 .tour-card__price {
   font-family: var(--font);

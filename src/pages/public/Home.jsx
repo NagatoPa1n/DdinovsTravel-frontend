@@ -5,10 +5,11 @@ import { tourApi } from '@/features/tours/tourApi'
 import { destinationApi } from '@/features/destinations/destinationApi'
 import { formatPrice } from '@/utils/formatPrice'
 import { discountPercent, savedAmount, tourImage } from '@/features/tours/tourUtils'
+import { formatDateRange } from '@/utils/formatDate'
 import { useTranslation } from '@/hooks/useTranslation'
 
 export default function Home() {
-  const { t, duration, language } = useTranslation()
+  const { t, duration, language, locale } = useTranslation()
   const [tours, setTours] = useState([])
   const [destinations, setDestinations] = useState([])
 
@@ -45,6 +46,7 @@ export default function Home() {
             {tours.map((tour) => {
               const off = discountPercent(tour)
               const saved = savedAmount(tour)
+              const dates = formatDateRange(tour.startDate, tour.endDate, locale)
               return (
                 <Link key={tour.id} to={`/tours/${tour.slug}`} className="tour-card">
                   <div className="tour-card__media">
@@ -56,6 +58,7 @@ export default function Home() {
                   <div className="tour-card__body">
                     <h3>{tour.title}</h3>
                     <p className="tour-card__meta">{duration(tour.days, tour.nights)}</p>
+                    {dates && <p className="tour-card__dates">{dates}</p>}
                     <p className="tour-card__price">
                       {formatPrice(tour.discountPrice || tour.price, tour.currency)}
                       <span className="tour-card__unit">{t('tour.perPerson')}</span>

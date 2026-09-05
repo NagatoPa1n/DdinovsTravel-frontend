@@ -6,6 +6,7 @@ import Lightbox from '@/components/ui/Lightbox'
 import { tourApi } from '@/features/tours/tourApi'
 import { formatPrice } from '@/utils/formatPrice'
 import { discountPercent, tourImage } from '@/features/tours/tourUtils'
+import { formatDateRange } from '@/utils/formatDate'
 import { useTranslation } from '@/hooks/useTranslation'
 
 /**
@@ -17,7 +18,7 @@ const TELEGRAM_ENQUIRY_URL = 'https://t.me/ddinovs'
 
 export default function TourDetails() {
   const { slug } = useParams()
-  const { t, duration, language } = useTranslation()
+  const { t, duration, language, locale } = useTranslation()
   const [tour, setTour] = useState(null)
   const [status, setStatus] = useState('loading')
   // -1 while the gallery viewer is closed.
@@ -52,6 +53,7 @@ export default function TourDetails() {
   }
 
   const off = discountPercent(tour)
+  const dates = formatDateRange(tour.startDate, tour.endDate, locale)
 
   return (
     <article className="tour-details">
@@ -140,6 +142,12 @@ export default function TourDetails() {
                 <dt>{t('tour.duration')}</dt>
                 <dd>{duration(tour.days, tour.nights)}</dd>
               </div>
+              {dates && (
+                <div>
+                  <dt>{t('tour.dates')}</dt>
+                  <dd>{dates}</dd>
+                </div>
+              )}
               {tour.groupSize > 0 && (
                 <div>
                   <dt>{t('tour.groupSize')}</dt>
