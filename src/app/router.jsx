@@ -8,6 +8,7 @@ import ProtectedRoute from '@/features/auth/ProtectedRoute'
 import Home from '@/pages/public/Home'
 import Tours from '@/pages/public/Tours'
 import TourDetails from '@/pages/public/TourDetails'
+import TourEnquiry from '@/pages/public/TourEnquiry'
 import Destinations from '@/pages/public/Destinations'
 import DestinationDetails from '@/pages/public/DestinationDetails'
 import About from '@/pages/public/About'
@@ -40,6 +41,7 @@ export default function AppRouter() {
           <Route index element={<Home />} />
           <Route path="tours" element={<Tours />} />
           <Route path="tours/:slug" element={<TourDetails />} />
+          <Route path="tours/:slug/enquire" element={<TourEnquiry />} />
           <Route path="destinations" element={<Destinations />} />
           <Route path="destinations/:slug" element={<DestinationDetails />} />
           <Route path="about" element={<About />} />
